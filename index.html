@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <script src = "sketch.js" defer></script>
+    <link rel= "stylesheet" href= "sketch.css">
+</head>
+<body>
+    <h1>Etch-a-Sketch</h1>
+    <p>Area Max: 24</p> 
+    <p>Size Max: 640</p>
+    <div id = options>
+        
+        <input type="number" max = 24 min = 2 placeholder="Area">
+        <input type="number" max = 640 min = 120 step = 20 placeholder="Size">
+        <button id = "submitarea" onclick = "submitCustomGrid()">Submit</button>
+    </div>
+    <div id = "grid_wrapper">
+    <!-- <div id = "grid_container">
+        
+    </div> -->
+    </div>
+</body>
+</html>
