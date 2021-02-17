@@ -9,18 +9,27 @@
 </head>
 <body>
     <h1>Etch-a-Sketch</h1>
-    <p>Area Max: 24</p> 
+    <p>Area Max: 64</p> 
     <p>Size Max: 640</p>
     <div id = options>
-        
-        <input type="number" max = 24 min = 2 placeholder="Area">
-        <input type="number" max = 640 min = 120 step = 20 placeholder="Size">
+        <input type="number" max = 64 min = 2 placeholder="Area">
+        <input type="number" max = 640 min = 320 step = 20 placeholder="Size">
         <button id = "submitarea" onclick = "submitCustomGrid()">Submit</button>
+        <button id = "cleargrid" onclick = "clearGrid()">Clear</button>
+    </div>
+    <h1>Color Schemes</h1>
+    <div id = "color_scheme">
+        <label for="colors">Choose a color scheme:&nbsp;&nbsp;</label>
+        <select id="colors" name="colors">
+            <option value="random()">Random</option>
+          <option value="rainbow">Rainbow</option>
+          <option value="newspaper">Newspaper</option>
+          <option value="autumn">Autumn</option>
+          <option value="greyscale()">Greyscale</option>
+        </select>
     </div>
     <div id = "grid_wrapper">
-    <!-- <div id = "grid_container">
-        
-    </div> -->
+  
     </div>
 </body>
 </html>
