@@ -9,3 +9,7 @@ Created a fully customizable grid using CSS Grid and Javascript so that user can
 Update 2/18/2021
 
 User can now paint over grid. Added different color schemes for color customization. Next I will allow user to customize whether he wants grid lines or not to get the pure sketch experience. Other ideas would be to add an eraser, or a right click to turn paint on and off to give more flexibility. Right now user only has clear entire grid option.
+
+Update 2/19/2021
+
+User can now switch to eraser mode or deactivate drawing mode, allowing more freedom in sketching. Instructions also added and icons added for both draw and erase mode.
