@@ -58,11 +58,11 @@ for(let i = 0; i < dimensions*dimensions; i++){
     grid_item.addEventListener("mousedown", function(e){
         buttonClicked = logMouseButton(e);
         if(buttonClicked === "left"){
-            grid_container.style.cursor = "url('http://www.rw-designer.com/cursor-view/61841.png') 32.5 10, auto"
+            grid_container.style.cursor = "default";
             isDrawing = !isDrawing;
             isErasing = false;
         } else if(buttonClicked === "right"){
-            grid_container.style.cursor = "url('http://www.rw-designer.com/cursor-view/72976.png') 20 20, auto"
+            grid_container.style.cursor = "not-allowed";
             isErasing = !isErasing;
             isDrawing = false;
         } 
@@ -84,7 +84,10 @@ function submitCustomGrid(){
     sizeinput = document.querySelectorAll("input")[1];
     dimensions = Number(areainput.value);
     size =  Number(sizeinput.value);
-    if(dimensions < 2 || dimensions > 64 || size < 320 || size > 640) return;
+    if(dimensions < 2 || dimensions > 64 || size < 320 || size > 640){
+        alert("Dimensions Minimum = 2 | Dimensions Maximum = 64 | Size Minimum = 320 | Size Maximum = 640 | \n\n Please try again.");
+        return;
+    } 
     grid.remove();
     createGrid(dimensions,size);
 }

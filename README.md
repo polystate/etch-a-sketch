@@ -14,6 +14,10 @@ Update 2/19/2021
 
 User can now switch to eraser mode or deactivate drawing mode, allowing more freedom in sketching. Instructions also added and icons added for both draw and erase mode.
 
-Update 2/19/201 7:34 PM
+Update 2/19/2021 7:34 PM
 
 User can now change background of canvas. Clear button and change background merged into single button. Still have to fix bug where if we change background eraser will start drawing in that color. Also need to spruce up the buttons and inputs to make them look more interesting.
+
+Update 2/21/2021
+
+Icon issue fixed. Layout simplified. Next I will finish some touchups.

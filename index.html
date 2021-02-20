@@ -8,8 +8,11 @@
     <link rel= "stylesheet" href= "sketch.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id = "main">
     <h1>Etch-a-Sketch</h1>
     <div id = "instructions">
     <p>* Left Click to draw and left click again to stop drawing. *
@@ -17,17 +20,15 @@
         click Change Size.</p> 
     </div>
     <div id = options>
-        <p>Min:Max Dimensions = 2:64&nbsp;&nbsp;&nbsp;
-            <br>Min:Max Size = 320:640
-        </p>
+        
         <input type="number" max = 64 min = 2 placeholder="Dim">
         <input type="number" max = 640 min = 320 step = 20 placeholder="Size">
         <button id = "submitarea" onclick = "submitCustomGrid()">Change<br>Size</button>
         <button id = "cleargrid" onclick = "clearGrid()">Clear Canvas/Change<br>Background</button>
     </div>
     <div id = "color_scheme">
-        <label for="colors">Choose a color scheme:&nbsp;&nbsp;</label>
-        <select id="colors" name="colors">
+        <label for="colors"><p>Choose a color scheme:&nbsp;&nbsp;</p></label>
+        <select id="colors" class="optioncolor" name="colors">
           <option value="random()">Random</option>
           <option value="rainbow">Rainbow</option>
           <option value="newspaper">Newspaper</option>
@@ -38,8 +39,8 @@
           <option value="sky">Sky</option>
           <option value="volcano()">Volcano</option>
         </select>
-        <label for="bgcolor">&nbsp;&nbsp;Choose a background:&nbsp;&nbsp;</label>
-        <select id="bgcolor" name="bgcolor">
+        <label for="bgcolor"><p>&nbsp;&nbsp;Choose a background:&nbsp;&nbsp;</p></label>
+        <select id="bgcolor" class="optioncolor" name="bgcolor">
             <option class = "bg" value="white">White</option>
             <option class = "bg" value="black">Black</option>
             <option class = "bg" value="lightblue">Lightblue</option>
@@ -56,6 +57,9 @@
     <div id = "grid_wrapper">
         
     </div>
-    
+    <footer>
+        <p>Created by polystate.<a href="https://github.com/polystate" target="_blank"><br><br>polystate@github</a></p>
+    </footer>
+    </div>
 </body>
 </html>
