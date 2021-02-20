@@ -1,33 +1,35 @@
 //Initialize Default Grid On Page Loard, Dimensions/Grid Size
 
-createGrid(64,500)
+createGrid(64,500);
 
 //Drawing/Erasing Booleans and Background Color
 
 let isDrawing = true;
 let isErasing = false;
-// let bgColor = "white";
+
+//Shapes
+
+const shapes = {
+    circle: `border-radius: 50%;`,
+    oval: `border-radius: 100px/50px;`,
+    triangle: `border-left: ${pixels}px solid transparent; border-right: ${pixels}px solid transparent; border-bottom: ${Math.floor(pixels*2)}px solid ${currentBG};`
+}
 
 //Color Schemes
 
-const greyscale = function(){
-    randNum = Math.floor(Math.random() * 255);
-    console.log(randNum)
-    return `rgb(${randNum},${randNum},${randNum})`
-}
 const random = function(){
     randNum1 = Math.floor(Math.random() * 255);
     randNum2 = Math.floor(Math.random() * 255);
     randNum3 = Math.floor(Math.random() * 255);
-    return `rgb(${randNum1},${randNum2},${randNum3})`
+    return `rgb(${randNum1},${randNum2},${randNum3})`;
 }
 const darkforest = function(){
     randNum = Math.floor(Math.random() * 255);
-    return `rgb(25,${randNum},25)`
+    return `rgb(25,${randNum},25)`;
 }
 const volcano = function(){
     randNum = Math.floor(Math.random() * 255);
-    return `rgb(${randNum},25,25)`
+    return `rgb(${randNum},25,25)`;
 }
 const rainbow = ["red","orange","yellow","green","blue","indigo","violet"];
 const newspaper = ["black","grey","lightgrey","silver","darkgrey","dimgrey","slategrey","gainsboro","whitesmoke"];
@@ -40,6 +42,7 @@ const sky = ["#79b9e1","#43677d","#6ca4c8","#5e90af","#87cefa","#93d2fa","#9fd7f
 
 function createGrid(dimensions,size){
 pixels = Math.floor(size/dimensions);
+currentBG = currentBackground();
 grid_wrapper = document.getElementById("grid_wrapper");
 grid_container = document.createElement("div");
 grid_container.setAttribute("id","grid_container");
@@ -52,42 +55,28 @@ for(let i = 0; i < dimensions*dimensions; i++){
     grid_item.setAttribute("class","grid-item");
     grid_item.setAttribute("id",`grid-item${i}`);
     grid_item.addEventListener("contextmenu", e => e.preventDefault());
-    
     grid_item.addEventListener("mousedown", function(e){
         buttonClicked = logMouseButton(e);
         if(buttonClicked === "left"){
             grid_container.style.cursor = "url('http://www.rw-designer.com/cursor-view/61841.png') 32.5 10, auto"
             isDrawing = !isDrawing;
             isErasing = false;
-            console.log("isDrawing is " + isDrawing);
         } else if(buttonClicked === "right"){
             grid_container.style.cursor = "url('http://www.rw-designer.com/cursor-view/72976.png') 20 20, auto"
             isErasing = !isErasing;
             isDrawing = false;
-            console.log("isErasing is " + isErasing);
         } 
     })
-    // pageBody = document.querySelector("body");
-    // pageBody.addEventListener("mouseover",function(){
-    //     grid.style.background = currentBackground();
-    // })
     grid_item.addEventListener("mouseover",function(){
         grid_square = document.getElementById(`grid-item${i}`)
         if(isDrawing){
-        grid_square.style = `background-color: ${randomColor(submitScheme())};`
+        grid_square.style = `background-color: ${randomColor(submitScheme())};}` /*${currentShape("triangle") Add this parameter for custom shape*/
         } else if(isErasing){
-        grid_square.style = `background-color: ${currentBackground()};`
+        grid_square.style = `background-color: ${currentBG};`
         }
     })
-    grid.appendChild(grid_item);
-    
-    // optionBG = document.querySelectorAll("option");
-    
-    // optionBG.addEventListener('click',function(){
-    //     grid.style.background = `${currentBackground()};`
-    // })
-    
-}
+    grid.appendChild(grid_item);   
+  }
 }
 
 function submitCustomGrid(){
@@ -100,11 +89,11 @@ function submitCustomGrid(){
     createGrid(dimensions,size);
 }
 
-
 function clearGrid(){
+    currentBG = currentBackground();
     gridsquares = document.getElementsByClassName("grid-item");
     for(let i = 0; i < gridsquares.length; i++){
-        gridsquares[i].style = `background-color: ${currentBackground()};`
+        gridsquares[i].style = `background-color: ${currentBG};`
     }
 }
 
@@ -117,6 +106,14 @@ function randomColor(arr){
 function submitScheme(){
     optionSelect = document.getElementById("colors").value
     return eval(optionSelect);
+}
+
+function currentBackground(){
+      return document.getElementById("bgcolor").value;
+}
+
+function currentShape(shape){
+    return shapes[shape];
 }
 
 function logMouseButton(e) {
@@ -133,8 +130,4 @@ function logMouseButton(e) {
       }
     }
   }
-
-  function currentBackground(){
-      return document.getElementById("bgcolor").value;
-}
 

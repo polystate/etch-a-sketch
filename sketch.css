@@ -49,6 +49,8 @@ h1{
 
   button{
       cursor: pointer;
+      font-weight: 650;
+      font-family:fantasy;
   }
 
   #color_scheme{
@@ -63,5 +65,25 @@ h1{
 
   #submitscheme{
       cursor: pointer;
+  }
+
+  input{
+      font-family: Tahoma, sans-serif;
+      font-weight: bold;
+      text-align: center;
+  }
+
+  option{
+      font-family: 'Shadows Into Light';
+  }
+
+  #bgcolor{
+      cursor: pointer;
+      text-align: center;
+  }
+
+  #colors{
+      cursor: pointer;
+      text-align: center;
   }
 
