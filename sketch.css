@@ -115,6 +115,7 @@ h1{
 
   option{
       font-family: 'Shadows Into Light';
+      font-size: 2rem;
   }
 
   #bgcolor{
@@ -137,6 +138,7 @@ h1{
       font-family: Arial;
       text-decoration: none;
       text-shadow:0px 1px 0px #ffffff;
+      text-align: center;
   }
 
   footer > p{
